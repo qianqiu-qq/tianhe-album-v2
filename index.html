@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>故土难离返矿聚会相册</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #0a0a0a; color: #fff; }
+.header { text-align: center; padding: 40px 20px 20px; background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); }
+.header h1 { font-size: 32px; letter-spacing: 2px; }
+.header .date { color: #aaa; margin-top: 8px; font-size: 14px; }
+.header .stats { color: #888; margin-top: 4px; font-size: 13px; }
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.9); padding: 10px; text-align: center; border-bottom: 1px solid #333; }
+.nav a { color: #6af; text-decoration: none; margin: 0 12px; font-size: 14px; }
+.nav a:hover { color: #8cf; }
+.gallery { max-width: 1400px; margin: 20px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.section-title { grid-column: 1 / -1; font-size: 22px; color: #ffd700; margin: 20px 0 10px; padding: 10px 0; border-bottom: 2px solid #ffd700; }
+.photo-card { border-radius: 10px; overflow: hidden; background: #1a1a2e; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.photo-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(79,172,254,0.3); }
+.photo-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.photo-card .info { padding: 8px 10px; font-size: 12px; color: #999; }
+.video-card { border-radius: 10px; overflow: hidden; background: #000; cursor: pointer; }
+.video-card video { width: 100%; display: block; }
+.video-card .info { padding: 8px 10px; font-size: 12px; color: #999; background: #1a1a2e; }
+.lightbox { display: none; position: fixed; z-index: 200; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); cursor: pointer; }
+.lightbox.show { display: flex; justify-content: center; align-items: center; }
+.lightbox .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; z-index: 201; }
+.lightbox img { max-width: 95%; max-height: 95%; object-fit: contain; }
+.lightbox .count { position: absolute; bottom: 20px; color: #aaa; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📸 故土难离返矿聚会相册</h1>
+  <div class="date">2026年6月21日</div>
+  <div class="stats">📷 169 张照片 · 🎬 3 个视频</div>
+</div>
+
+<div class="nav">
+  <a href="#videos">🎬视频</a>
+  <a href="#photos">📷照片</a>
+</div>
+
+<div class="gallery">
+
+<!-- ======== 视频部分 ======== -->
+<div class="section-title" id="videos">🎬 聚会视频</div>
+
+<div class="video-card">
+  <video src="video_001_13c574906b00d8c50c6370ec3e564352(1).mp4" controls preload="metadata" poster=""></video>
+  <div class="info">📹 精彩片段 · 4.7MB</div>
+</div>
+
+<div class="video-card">
+  <video src="video_002_316bf1ec88f582a3c3b6db53bfa98826.mp4" controls preload="metadata" poster=""></video>
+  <div class="info">🎵 文艺表演 · 5.5MB</div>
+</div>
+
+<div class="video-card">
+  <video src="video_003_e1dadf2390ac79de86afb5102cd2ec66.mp4" controls preload="metadata" poster=""></video>
+  <div class="info">⭐ 全程记录（推荐） · 28.7MB</div>
+</div>
+
+<!-- ======== 照片部分 ======== -->
+<div class="section-title" id="photos">📷 聚会照片</div>
+
+<div class="photo-card" onclick="openLightbox(0)">
+  <img src="photo_001_微信图片_20260621172757_649_311.jpg" alt="照片1" loading="lazy">
+  <div class="info">#001</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(1)">
+  <img src="photo_002_微信图片_20260621175120_88_5448.jpg" alt="照片2" loading="lazy">
+  <div class="info">#002</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(2)">
+  <img src="photo_003_微信图片_20260621175612_90_5448.jpg" alt="照片3" loading="lazy">
+  <div class="info">#003</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(3)">
+  <img src="photo_004_微信图片_20260621175613_91_5448.jpg" alt="照片4" loading="lazy">
+  <div class="info">#004</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(4)">
+  <img src="photo_005_微信图片_20260621175615_92_5448.jpg" alt="照片5" loading="lazy">
+  <div class="info">#005</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(5)">
+  <img src="photo_006_微信图片_20260621175616_93_5448.jpg" alt="照片6" loading="lazy">
+  <div class="info">#006</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(6)">
+  <img src="photo_007_微信图片_20260621175618_94_5448.jpg" alt="照片7" loading="lazy">
+  <div class="info">#007</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(7)">
+  <img src="photo_008_微信图片_20260621175619_95_5448.jpg" alt="照片8" loading="lazy">
+  <div class="info">#008</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(8)">
+  <img src="photo_009_微信图片_20260621175620_96_5448.jpg" alt="照片9" loading="lazy">
+  <div class="info">#009</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(9)">
+  <img src="photo_010_微信图片_20260621175622_97_5448.jpg" alt="照片10" loading="lazy">
+  <div class="info">#010</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(10)">
+  <img src="photo_011_微信图片_20260621175623_98_5448.jpg" alt="照片11" loading="lazy">
+  <div class="info">#011</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(11)">
+  <img src="photo_012_微信图片_20260621175625_99_5448.jpg" alt="照片12" loading="lazy">
+  <div class="info">#012</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(12)">
+  <img src="photo_013_微信图片_20260621175629_100_5448.jpg" alt="照片13" loading="lazy">
+  <div class="info">#013</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(13)">
+  <img src="photo_014_微信图片_20260621175635_101_5448.jpg" alt="照片14" loading="lazy">
+  <div class="info">#014</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(14)">
+  <img src="photo_015_微信图片_20260621175640_102_5448.jpg" alt="照片15" loading="lazy">
+  <div class="info">#015</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(15)">
+  <img src="photo_016_微信图片_20260621175644_103_5448.jpg" alt="照片16" loading="lazy">
+  <div class="info">#016</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(16)">
+  <img src="photo_017_微信图片_20260621175646_104_5448.jpg" alt="照片17" loading="lazy">
+  <div class="info">#017</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(17)">
+  <img src="photo_018_微信图片_20260621175650_105_5448.jpg" alt="照片18" loading="lazy">
+  <div class="info">#018</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(18)">
+  <img src="photo_019_微信图片_20260621175654_106_5448.jpg" alt="照片19" loading="lazy">
+  <div class="info">#019</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(19)">
+  <img src="photo_020_微信图片_20260621175659_107_5448.jpg" alt="照片20" loading="lazy">
+  <div class="info">#020</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(20)">
+  <img src="photo_021_微信图片_20260621175703_108_5448.jpg" alt="照片21" loading="lazy">
+  <div class="info">#021</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(21)">
+  <img src="photo_022_微信图片_20260621175708_109_5448.jpg" alt="照片22" loading="lazy">
+  <div class="info">#022</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(22)">
+  <img src="photo_023_微信图片_20260621175713_110_5448.jpg" alt="照片23" loading="lazy">
+  <div class="info">#023</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(23)">
+  <img src="photo_024_微信图片_20260621175717_111_5448.jpg" alt="照片24" loading="lazy">
+  <div class="info">#024</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(24)">
+  <img src="photo_025_微信图片_20260621175721_112_5448.jpg" alt="照片25" loading="lazy">
+  <div class="info">#025</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(25)">
+  <img src="photo_026_微信图片_20260621175725_113_5448.jpg" alt="照片26" loading="lazy">
+  <div class="info">#026</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(26)">
+  <img src="photo_027_微信图片_20260621175729_114_5448.jpg" alt="照片27" loading="lazy">
+  <div class="info">#027</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(27)">
+  <img src="photo_028_微信图片_20260621175734_115_5448.jpg" alt="照片28" loading="lazy">
+  <div class="info">#028</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(28)">
+  <img src="photo_029_微信图片_20260621175747_116_5448.jpg" alt="照片29" loading="lazy">
+  <div class="info">#029</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(29)">
+  <img src="photo_030_微信图片_20260621175748_117_5448.jpg" alt="照片30" loading="lazy">
+  <div class="info">#030</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(30)">
+  <img src="photo_031_微信图片_20260621175749_118_5448.jpg" alt="照片31" loading="lazy">
+  <div class="info">#031</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(31)">
+  <img src="photo_032_微信图片_20260621175750_119_5448.jpg" alt="照片32" loading="lazy">
+  <div class="info">#032</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(32)">
+  <img src="photo_033_微信图片_20260621175751_120_5448.jpg" alt="照片33" loading="lazy">
+  <div class="info">#033</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(33)">
+  <img src="photo_034_微信图片_20260621175752_121_5448.jpg" alt="照片34" loading="lazy">
+  <div class="info">#034</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(34)">
+  <img src="photo_035_微信图片_20260621175753_122_5448.jpg" alt="照片35" loading="lazy">
+  <div class="info">#035</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(35)">
+  <img src="photo_036_微信图片_20260621175754_123_5448.jpg" alt="照片36" loading="lazy">
+  <div class="info">#036</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(36)">
+  <img src="photo_037_微信图片_20260621175755_124_5448.jpg" alt="照片37" loading="lazy">
+  <div class="info">#037</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(37)">
+  <img src="photo_038_微信图片_20260621175756_125_5448.jpg" alt="照片38" loading="lazy">
+  <div class="info">#038</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(38)">
+  <img src="photo_039_微信图片_20260621175757_126_5448.jpg" alt="照片39" loading="lazy">
+  <div class="info">#039</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(39)">
+  <img src="photo_040_微信图片_20260621175758_127_5448.jpg" alt="照片40" loading="lazy">
+  <div class="info">#040</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(40)">
+  <img src="photo_041_微信图片_20260621175759_128_5448.jpg" alt="照片41" loading="lazy">
+  <div class="info">#041</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(41)">
+  <img src="photo_042_微信图片_20260621175800_129_5448.jpg" alt="照片42" loading="lazy">
+  <div class="info">#042</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(42)">
+  <img src="photo_043_微信图片_20260621175801_130_5448.jpg" alt="照片43" loading="lazy">
+  <div class="info">#043</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(43)">
+  <img src="photo_044_微信图片_20260621175802_131_5448.jpg" alt="照片44" loading="lazy">
+  <div class="info">#044</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(44)">
+  <img src="photo_045_微信图片_20260621175803_132_5448.jpg" alt="照片45" loading="lazy">
+  <div class="info">#045</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(45)">
+  <img src="photo_046_微信图片_20260621175804_133_5448.jpg" alt="照片46" loading="lazy">
+  <div class="info">#046</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(46)">
+  <img src="photo_047_微信图片_20260621175805_134_5448.jpg" alt="照片47" loading="lazy">
+  <div class="info">#047</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(47)">
+  <img src="photo_048_微信图片_20260621175807_135_5448.jpg" alt="照片48" loading="lazy">
+  <div class="info">#048</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(48)">
+  <img src="photo_049_微信图片_20260621175808_136_5448.jpg" alt="照片49" loading="lazy">
+  <div class="info">#049</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(49)">
+  <img src="photo_050_微信图片_20260621175809_137_5448.jpg" alt="照片50" loading="lazy">
+  <div class="info">#050</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(50)">
+  <img src="photo_051_微信图片_20260621175810_138_5448.jpg" alt="照片51" loading="lazy">
+  <div class="info">#051</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(51)">
+  <img src="photo_052_微信图片_20260621175811_139_5448.jpg" alt="照片52" loading="lazy">
+  <div class="info">#052</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(52)">
+  <img src="photo_053_微信图片_20260621175812_140_5448.jpg" alt="照片53" loading="lazy">
+  <div class="info">#053</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(53)">
+  <img src="photo_054_微信图片_20260621175812_141_5448.jpg" alt="照片54" loading="lazy">
+  <div class="info">#054</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(54)">
+  <img src="photo_055_微信图片_20260621175813_142_5448.jpg" alt="照片55" loading="lazy">
+  <div class="info">#055</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(55)">
+  <img src="photo_056_微信图片_20260621175814_143_5448.jpg" alt="照片56" loading="lazy">
+  <div class="info">#056</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(56)">
+  <img src="photo_057_微信图片_20260621175815_144_5448.jpg" alt="照片57" loading="lazy">
+  <div class="info">#057</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(57)">
+  <img src="photo_058_微信图片_20260621175816_145_5448.jpg" alt="照片58" loading="lazy">
+  <div class="info">#058</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(58)">
+  <img src="photo_059_微信图片_20260621175817_146_5448.jpg" alt="照片59" loading="lazy">
+  <div class="info">#059</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(59)">
+  <img src="photo_060_微信图片_20260621175818_147_5448.jpg" alt="照片60" loading="lazy">
+  <div class="info">#060</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(60)">
+  <img src="photo_061_微信图片_20260621175819_148_5448.jpg" alt="照片61" loading="lazy">
+  <div class="info">#061</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(61)">
+  <img src="photo_062_微信图片_20260621175820_149_5448.jpg" alt="照片62" loading="lazy">
+  <div class="info">#062</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(62)">
+  <img src="photo_063_微信图片_20260621175821_150_5448.jpg" alt="照片63" loading="lazy">
+  <div class="info">#063</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(63)">
+  <img src="photo_064_微信图片_20260621175822_151_5448.jpg" alt="照片64" loading="lazy">
+  <div class="info">#064</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(64)">
+  <img src="photo_065_微信图片_20260621175823_152_5448.jpg" alt="照片65" loading="lazy">
+  <div class="info">#065</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(65)">
+  <img src="photo_066_微信图片_20260621175824_153_5448.jpg" alt="照片66" loading="lazy">
+  <div class="info">#066</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(66)">
+  <img src="photo_067_微信图片_20260621175825_154_5448.jpg" alt="照片67" loading="lazy">
+  <div class="info">#067</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(67)">
+  <img src="photo_068_微信图片_20260621175826_155_5448.jpg" alt="照片68" loading="lazy">
+  <div class="info">#068</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(68)">
+  <img src="photo_069_微信图片_20260621175827_156_5448.jpg" alt="照片69" loading="lazy">
+  <div class="info">#069</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(69)">
+  <img src="photo_070_微信图片_20260621175828_157_5448.jpg" alt="照片70" loading="lazy">
+  <div class="info">#070</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(70)">
+  <img src="photo_071_微信图片_20260621175829_158_5448.jpg" alt="照片71" loading="lazy">
+  <div class="info">#071</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(71)">
+  <img src="photo_072_微信图片_20260621175831_159_5448.jpg" alt="照片72" loading="lazy">
+  <div class="info">#072</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(72)">
+  <img src="photo_073_微信图片_20260621175832_160_5448.jpg" alt="照片73" loading="lazy">
+  <div class="info">#073</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(73)">
+  <img src="photo_074_微信图片_20260621175833_161_5448.jpg" alt="照片74" loading="lazy">
+  <div class="info">#074</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(74)">
+  <img src="photo_075_微信图片_20260621175834_162_5448.jpg" alt="照片75" loading="lazy">
+  <div class="info">#075</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(75)">
+  <img src="photo_076_微信图片_20260621175835_163_5448.jpg" alt="照片76" loading="lazy">
+  <div class="info">#076</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(76)">
+  <img src="photo_077_微信图片_20260621175836_164_5448.jpg" alt="照片77" loading="lazy">
+  <div class="info">#077</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(77)">
+  <img src="photo_078_微信图片_20260621175837_165_5448.jpg" alt="照片78" loading="lazy">
+  <div class="info">#078</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(78)">
+  <img src="photo_079_微信图片_20260621175838_166_5448.jpg" alt="照片79" loading="lazy">
+  <div class="info">#079</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(79)">
+  <img src="photo_080_微信图片_20260621175839_167_5448.jpg" alt="照片80" loading="lazy">
+  <div class="info">#080</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(80)">
+  <img src="photo_081_微信图片_20260621175957_168_5448.jpg" alt="照片81" loading="lazy">
+  <div class="info">#081</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(81)">
+  <img src="photo_082_微信图片_20260621175959_169_5448.jpg" alt="照片82" loading="lazy">
+  <div class="info">#082</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(82)">
+  <img src="photo_083_微信图片_20260621180001_170_5448.jpg" alt="照片83" loading="lazy">
+  <div class="info">#083</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(83)">
+  <img src="photo_084_微信图片_20260621180003_171_5448.jpg" alt="照片84" loading="lazy">
+  <div class="info">#084</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(84)">
+  <img src="photo_085_微信图片_20260621180004_172_5448.jpg" alt="照片85" loading="lazy">
+  <div class="info">#085</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(85)">
+  <img src="photo_086_微信图片_20260621180006_173_5448.jpg" alt="照片86" loading="lazy">
+  <div class="info">#086</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(86)">
+  <img src="photo_087_微信图片_20260621180008_174_5448.jpg" alt="照片87" loading="lazy">
+  <div class="info">#087</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(87)">
+  <img src="photo_088_微信图片_20260621180010_175_5448.jpg" alt="照片88" loading="lazy">
+  <div class="info">#088</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(88)">
+  <img src="photo_089_微信图片_20260621180012_176_5448.jpg" alt="照片89" loading="lazy">
+  <div class="info">#089</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(89)">
+  <img src="photo_090_微信图片_20260621180014_177_5448.jpg" alt="照片90" loading="lazy">
+  <div class="info">#090</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(90)">
+  <img src="photo_091_微信图片_20260621180018_178_5448.jpg" alt="照片91" loading="lazy">
+  <div class="info">#091</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(91)">
+  <img src="photo_092_微信图片_20260621180023_179_5448.jpg" alt="照片92" loading="lazy">
+  <div class="info">#092</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(92)">
+  <img src="photo_093_微信图片_20260621180027_180_5448.jpg" alt="照片93" loading="lazy">
+  <div class="info">#093</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(93)">
+  <img src="photo_094_微信图片_20260621180029_181_5448.jpg" alt="照片94" loading="lazy">
+  <div class="info">#094</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(94)">
+  <img src="photo_095_微信图片_20260621180033_182_5448.jpg" alt="照片95" loading="lazy">
+  <div class="info">#095</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(95)">
+  <img src="photo_096_微信图片_20260621180037_183_5448.jpg" alt="照片96" loading="lazy">
+  <div class="info">#096</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(96)">
+  <img src="photo_097_微信图片_20260621180041_184_5448.jpg" alt="照片97" loading="lazy">
+  <div class="info">#097</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(97)">
+  <img src="photo_098_微信图片_20260621180045_185_5448.jpg" alt="照片98" loading="lazy">
+  <div class="info">#098</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(98)">
+  <img src="photo_099_微信图片_20260621180050_186_5448.jpg" alt="照片99" loading="lazy">
+  <div class="info">#099</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(99)">
+  <img src="photo_100_微信图片_20260621180054_187_5448.jpg" alt="照片100" loading="lazy">
+  <div class="info">#100</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(100)">
+  <img src="photo_101_微信图片_20260621180059_188_5448.jpg" alt="照片101" loading="lazy">
+  <div class="info">#101</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(101)">
+  <img src="photo_102_微信图片_20260621180103_189_5448.jpg" alt="照片102" loading="lazy">
+  <div class="info">#102</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(102)">
+  <img src="photo_103_微信图片_20260621180108_190_5448.jpg" alt="照片103" loading="lazy">
+  <div class="info">#103</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(103)">
+  <img src="photo_104_微信图片_20260621180112_191_5448.jpg" alt="照片104" loading="lazy">
+  <div class="info">#104</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(104)">
+  <img src="photo_105_微信图片_20260621180115_192_5448.jpg" alt="照片105" loading="lazy">
+  <div class="info">#105</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(105)">
+  <img src="photo_106_微信图片_20260621180119_193_5448.jpg" alt="照片106" loading="lazy">
+  <div class="info">#106</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(106)">
+  <img src="photo_107_微信图片_20260621180123_194_5448.jpg" alt="照片107" loading="lazy">
+  <div class="info">#107</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(107)">
+  <img src="photo_108_微信图片_20260621180127_195_5448.jpg" alt="照片108" loading="lazy">
+  <div class="info">#108</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(108)">
+  <img src="photo_109_微信图片_20260621180132_196_5448.jpg" alt="照片109" loading="lazy">
+  <div class="info">#109</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(109)">
+  <img src="photo_110_微信图片_20260621180135_197_5448.jpg" alt="照片110" loading="lazy">
+  <div class="info">#110</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(110)">
+  <img src="photo_111_微信图片_20260621180139_198_5448.jpg" alt="照片111" loading="lazy">
+  <div class="info">#111</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(111)">
+  <img src="photo_112_微信图片_20260621180144_199_5448.jpg" alt="照片112" loading="lazy">
+  <div class="info">#112</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(112)">
+  <img src="photo_113_微信图片_20260621180148_200_5448.jpg" alt="照片113" loading="lazy">
+  <div class="info">#113</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(113)">
+  <img src="photo_114_微信图片_20260621180152_201_5448.jpg" alt="照片114" loading="lazy">
+  <div class="info">#114</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(114)">
+  <img src="photo_115_微信图片_20260621180157_202_5448.jpg" alt="照片115" loading="lazy">
+  <div class="info">#115</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(115)">
+  <img src="photo_116_微信图片_20260621180201_203_5448.jpg" alt="照片116" loading="lazy">
+  <div class="info">#116</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(116)">
+  <img src="photo_117_微信图片_20260621180206_204_5448.jpg" alt="照片117" loading="lazy">
+  <div class="info">#117</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(117)">
+  <img src="photo_118_微信图片_20260621180208_205_5448.jpg" alt="照片118" loading="lazy">
+  <div class="info">#118</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(118)">
+  <img src="photo_119_微信图片_20260621180211_206_5448.jpg" alt="照片119" loading="lazy">
+  <div class="info">#119</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(119)">
+  <img src="photo_120_微信图片_20260621180216_207_5448.jpg" alt="照片120" loading="lazy">
+  <div class="info">#120</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(120)">
+  <img src="photo_121_微信图片_20260621180221_208_5448.jpg" alt="照片121" loading="lazy">
+  <div class="info">#121</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(121)">
+  <img src="photo_122_微信图片_20260621180226_209_5448.jpg" alt="照片122" loading="lazy">
+  <div class="info">#122</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(122)">
+  <img src="photo_123_微信图片_20260621180231_210_5448.jpg" alt="照片123" loading="lazy">
+  <div class="info">#123</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(123)">
+  <img src="photo_124_微信图片_20260621180235_211_5448.jpg" alt="照片124" loading="lazy">
+  <div class="info">#124</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(124)">
+  <img src="photo_125_微信图片_20260621180239_212_5448.jpg" alt="照片125" loading="lazy">
+  <div class="info">#125</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(125)">
+  <img src="photo_126_微信图片_20260621180243_213_5448.jpg" alt="照片126" loading="lazy">
+  <div class="info">#126</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(126)">
+  <img src="photo_127_微信图片_20260621180248_214_5448.jpg" alt="照片127" loading="lazy">
+  <div class="info">#127</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(127)">
+  <img src="photo_128_微信图片_20260621180253_215_5448.jpg" alt="照片128" loading="lazy">
+  <div class="info">#128</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(128)">
+  <img src="photo_129_微信图片_20260621180258_216_5448.jpg" alt="照片129" loading="lazy">
+  <div class="info">#129</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(129)">
+  <img src="photo_130_微信图片_20260621180302_217_5448.jpg" alt="照片130" loading="lazy">
+  <div class="info">#130</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(130)">
+  <img src="photo_131_微信图片_20260621180306_218_5448.jpg" alt="照片131" loading="lazy">
+  <div class="info">#131</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(131)">
+  <img src="photo_132_微信图片_20260621180311_219_5448.jpg" alt="照片132" loading="lazy">
+  <div class="info">#132</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(132)">
+  <img src="photo_133_微信图片_20260621180315_220_5448.jpg" alt="照片133" loading="lazy">
+  <div class="info">#133</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(133)">
+  <img src="photo_134_微信图片_20260621180318_221_5448.jpg" alt="照片134" loading="lazy">
+  <div class="info">#134</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(134)">
+  <img src="photo_135_微信图片_20260621180321_222_5448.jpg" alt="照片135" loading="lazy">
+  <div class="info">#135</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(135)">
+  <img src="photo_136_微信图片_20260621180323_223_5448.jpg" alt="照片136" loading="lazy">
+  <div class="info">#136</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(136)">
+  <img src="photo_137_微信图片_20260621180329_224_5448.jpg" alt="照片137" loading="lazy">
+  <div class="info">#137</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(137)">
+  <img src="photo_138_微信图片_20260621180334_225_5448.jpg" alt="照片138" loading="lazy">
+  <div class="info">#138</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(138)">
+  <img src="photo_139_微信图片_20260621180339_226_5448.jpg" alt="照片139" loading="lazy">
+  <div class="info">#139</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(139)">
+  <img src="photo_140_微信图片_20260621180344_227_5448.jpg" alt="照片140" loading="lazy">
+  <div class="info">#140</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(140)">
+  <img src="photo_141_微信图片_20260621180347_228_5448.jpg" alt="照片141" loading="lazy">
+  <div class="info">#141</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(141)">
+  <img src="photo_142_微信图片_20260621180349_229_5448.jpg" alt="照片142" loading="lazy">
+  <div class="info">#142</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(142)">
+  <img src="photo_143_微信图片_20260621180351_230_5448.jpg" alt="照片143" loading="lazy">
+  <div class="info">#143</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(143)">
+  <img src="photo_144_微信图片_20260621180356_231_5448.jpg" alt="照片144" loading="lazy">
+  <div class="info">#144</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(144)">
+  <img src="photo_145_微信图片_20260621180401_232_5448.jpg" alt="照片145" loading="lazy">
+  <div class="info">#145</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(145)">
+  <img src="photo_146_微信图片_20260621180406_233_5448.jpg" alt="照片146" loading="lazy">
+  <div class="info">#146</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(146)">
+  <img src="photo_147_微信图片_20260621180408_234_5448.jpg" alt="照片147" loading="lazy">
+  <div class="info">#147</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(147)">
+  <img src="photo_148_微信图片_20260621180411_235_5448.jpg" alt="照片148" loading="lazy">
+  <div class="info">#148</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(148)">
+  <img src="photo_149_微信图片_20260621180413_236_5448.jpg" alt="照片149" loading="lazy">
+  <div class="info">#149</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(149)">
+  <img src="photo_150_微信图片_20260621180417_237_5448.jpg" alt="照片150" loading="lazy">
+  <div class="info">#150</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(150)">
+  <img src="photo_151_微信图片_20260621180421_238_5448.jpg" alt="照片151" loading="lazy">
+  <div class="info">#151</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(151)">
+  <img src="photo_152_微信图片_20260621180423_239_5448.jpg" alt="照片152" loading="lazy">
+  <div class="info">#152</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(152)">
+  <img src="photo_153_微信图片_20260621180425_240_5448.jpg" alt="照片153" loading="lazy">
+  <div class="info">#153</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(153)">
+  <img src="photo_154_微信图片_20260621180429_241_5448.jpg" alt="照片154" loading="lazy">
+  <div class="info">#154</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(154)">
+  <img src="photo_155_微信图片_20260621180431_242_5448.jpg" alt="照片155" loading="lazy">
+  <div class="info">#155</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(155)">
+  <img src="photo_156_微信图片_20260621180433_243_5448.jpg" alt="照片156" loading="lazy">
+  <div class="info">#156</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(156)">
+  <img src="photo_157_微信图片_20260621180438_244_5448.jpg" alt="照片157" loading="lazy">
+  <div class="info">#157</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(157)">
+  <img src="photo_158_微信图片_20260621180443_245_5448.jpg" alt="照片158" loading="lazy">
+  <div class="info">#158</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(158)">
+  <img src="photo_159_微信图片_20260621180448_246_5448.jpg" alt="照片159" loading="lazy">
+  <div class="info">#159</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(159)">
+  <img src="photo_160_微信图片_20260621180452_247_5448.jpg" alt="照片160" loading="lazy">
+  <div class="info">#160</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(160)">
+  <img src="photo_161_微信图片_20260621180455_248_5448.jpg" alt="照片161" loading="lazy">
+  <div class="info">#161</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(161)">
+  <img src="photo_162_微信图片_20260621180459_249_5448.jpg" alt="照片162" loading="lazy">
+  <div class="info">#162</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(162)">
+  <img src="photo_163_微信图片_20260621180503_250_5448.jpg" alt="照片163" loading="lazy">
+  <div class="info">#163</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(163)">
+  <img src="photo_164_微信图片_20260621180507_251_5448.jpg" alt="照片164" loading="lazy">
+  <div class="info">#164</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(164)">
+  <img src="photo_165_微信图片_20260621180509_252_5448.jpg" alt="照片165" loading="lazy">
+  <div class="info">#165</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(165)">
+  <img src="photo_166_微信图片_20260621180514_253_5448.jpg" alt="照片166" loading="lazy">
+  <div class="info">#166</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(166)">
+  <img src="photo_167_微信图片_20260621180519_254_5448.jpg" alt="照片167" loading="lazy">
+  <div class="info">#167</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(167)">
+  <img src="photo_168_微信图片_20260621180524_255_5448.jpg" alt="照片168" loading="lazy">
+  <div class="info">#168</div>
+</div>
+
+<div class="photo-card" onclick="openLightbox(168)">
+  <img src="photo_169_微信图片_20260621180526_256_5448.jpg" alt="照片169" loading="lazy">
+  <div class="info">#169</div>
+</div>
+
+</div>
+
+<!-- 灯箱 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div class="count" id="lightbox-count"></div>
+</div>
+
+<script>
+const photos = ["photo_001_微信图片_20260621172757_649_311.jpg","photo_002_微信图片_20260621175120_88_5448.jpg","photo_003_微信图片_20260621175612_90_5448.jpg","photo_004_微信图片_20260621175613_91_5448.jpg","photo_005_微信图片_20260621175615_92_5448.jpg","photo_006_微信图片_20260621175616_93_5448.jpg","photo_007_微信图片_20260621175618_94_5448.jpg","photo_008_微信图片_20260621175619_95_5448.jpg","photo_009_微信图片_20260621175620_96_5448.jpg","photo_010_微信图片_20260621175622_97_5448.jpg","photo_011_微信图片_20260621175623_98_5448.jpg","photo_012_微信图片_20260621175625_99_5448.jpg","photo_013_微信图片_20260621175629_100_5448.jpg","photo_014_微信图片_20260621175635_101_5448.jpg","photo_015_微信图片_20260621175640_102_5448.jpg","photo_016_微信图片_20260621175644_103_5448.jpg","photo_017_微信图片_20260621175646_104_5448.jpg","photo_018_微信图片_20260621175650_105_5448.jpg","photo_019_微信图片_20260621175654_106_5448.jpg","photo_020_微信图片_20260621175659_107_5448.jpg","photo_021_微信图片_20260621175703_108_5448.jpg","photo_022_微信图片_20260621175708_109_5448.jpg","photo_023_微信图片_20260621175713_110_5448.jpg","photo_024_微信图片_20260621175717_111_5448.jpg","photo_025_微信图片_20260621175721_112_5448.jpg","photo_026_微信图片_20260621175725_113_5448.jpg","photo_027_微信图片_20260621175729_114_5448.jpg","photo_028_微信图片_20260621175734_115_5448.jpg","photo_029_微信图片_20260621175747_116_5448.jpg","photo_030_微信图片_20260621175748_117_5448.jpg","photo_031_微信图片_20260621175749_118_5448.jpg","photo_032_微信图片_20260621175750_119_5448.jpg","photo_033_微信图片_20260621175751_120_5448.jpg","photo_034_微信图片_20260621175752_121_5448.jpg","photo_035_微信图片_20260621175753_122_5448.jpg","photo_036_微信图片_20260621175754_123_5448.jpg","photo_037_微信图片_20260621175755_124_5448.jpg","photo_038_微信图片_20260621175756_125_5448.jpg","photo_039_微信图片_20260621175757_126_5448.jpg","photo_040_微信图片_20260621175758_127_5448.jpg","photo_041_微信图片_20260621175759_128_5448.jpg","photo_042_微信图片_20260621175800_129_5448.jpg","photo_043_微信图片_20260621175801_130_5448.jpg","photo_044_微信图片_20260621175802_131_5448.jpg","photo_045_微信图片_20260621175803_132_5448.jpg","photo_046_微信图片_20260621175804_133_5448.jpg","photo_047_微信图片_20260621175805_134_5448.jpg","photo_048_微信图片_20260621175807_135_5448.jpg","photo_049_微信图片_20260621175808_136_5448.jpg","photo_050_微信图片_20260621175809_137_5448.jpg","photo_051_微信图片_20260621175810_138_5448.jpg","photo_052_微信图片_20260621175811_139_5448.jpg","photo_053_微信图片_20260621175812_140_5448.jpg","photo_054_微信图片_20260621175812_141_5448.jpg","photo_055_微信图片_20260621175813_142_5448.jpg","photo_056_微信图片_20260621175814_143_5448.jpg","photo_057_微信图片_20260621175815_144_5448.jpg","photo_058_微信图片_20260621175816_145_5448.jpg","photo_059_微信图片_20260621175817_146_5448.jpg","photo_060_微信图片_20260621175818_147_5448.jpg","photo_061_微信图片_20260621175819_148_5448.jpg","photo_062_微信图片_20260621175820_149_5448.jpg","photo_063_微信图片_20260621175821_150_5448.jpg","photo_064_微信图片_20260621175822_151_5448.jpg","photo_065_微信图片_20260621175823_152_5448.jpg","photo_066_微信图片_20260621175824_153_5448.jpg","photo_067_微信图片_20260621175825_154_5448.jpg","photo_068_微信图片_20260621175826_155_5448.jpg","photo_069_微信图片_20260621175827_156_5448.jpg","photo_070_微信图片_20260621175828_157_5448.jpg","photo_071_微信图片_20260621175829_158_5448.jpg","photo_072_微信图片_20260621175831_159_5448.jpg","photo_073_微信图片_20260621175832_160_5448.jpg","photo_074_微信图片_20260621175833_161_5448.jpg","photo_075_微信图片_20260621175834_162_5448.jpg","photo_076_微信图片_20260621175835_163_5448.jpg","photo_077_微信图片_20260621175836_164_5448.jpg","photo_078_微信图片_20260621175837_165_5448.jpg","photo_079_微信图片_20260621175838_166_5448.jpg","photo_080_微信图片_20260621175839_167_5448.jpg","photo_081_微信图片_20260621175957_168_5448.jpg","photo_082_微信图片_20260621175959_169_5448.jpg","photo_083_微信图片_20260621180001_170_5448.jpg","photo_084_微信图片_20260621180003_171_5448.jpg","photo_085_微信图片_20260621180004_172_5448.jpg","photo_086_微信图片_20260621180006_173_5448.jpg","photo_087_微信图片_20260621180008_174_5448.jpg","photo_088_微信图片_20260621180010_175_5448.jpg","photo_089_微信图片_20260621180012_176_5448.jpg","photo_090_微信图片_20260621180014_177_5448.jpg","photo_091_微信图片_20260621180018_178_5448.jpg","photo_092_微信图片_20260621180023_179_5448.jpg","photo_093_微信图片_20260621180027_180_5448.jpg","photo_094_微信图片_20260621180029_181_5448.jpg","photo_095_微信图片_20260621180033_182_5448.jpg","photo_096_微信图片_20260621180037_183_5448.jpg","photo_097_微信图片_20260621180041_184_5448.jpg","photo_098_微信图片_20260621180045_185_5448.jpg","photo_099_微信图片_20260621180050_186_5448.jpg","photo_100_微信图片_20260621180054_187_5448.jpg","photo_101_微信图片_20260621180059_188_5448.jpg","photo_102_微信图片_20260621180103_189_5448.jpg","photo_103_微信图片_20260621180108_190_5448.jpg","photo_104_微信图片_20260621180112_191_5448.jpg","photo_105_微信图片_20260621180115_192_5448.jpg","photo_106_微信图片_20260621180119_193_5448.jpg","photo_107_微信图片_20260621180123_194_5448.jpg","photo_108_微信图片_20260621180127_195_5448.jpg","photo_109_微信图片_20260621180132_196_5448.jpg","photo_110_微信图片_20260621180135_197_5448.jpg","photo_111_微信图片_20260621180139_198_5448.jpg","photo_112_微信图片_20260621180144_199_5448.jpg","photo_113_微信图片_20260621180148_200_5448.jpg","photo_114_微信图片_20260621180152_201_5448.jpg","photo_115_微信图片_20260621180157_202_5448.jpg","photo_116_微信图片_20260621180201_203_5448.jpg","photo_117_微信图片_20260621180206_204_5448.jpg","photo_118_微信图片_20260621180208_205_5448.jpg","photo_119_微信图片_20260621180211_206_5448.jpg","photo_120_微信图片_20260621180216_207_5448.jpg","photo_121_微信图片_20260621180221_208_5448.jpg","photo_122_微信图片_20260621180226_209_5448.jpg","photo_123_微信图片_20260621180231_210_5448.jpg","photo_124_微信图片_20260621180235_211_5448.jpg","photo_125_微信图片_20260621180239_212_5448.jpg","photo_126_微信图片_20260621180243_213_5448.jpg","photo_127_微信图片_20260621180248_214_5448.jpg","photo_128_微信图片_20260621180253_215_5448.jpg","photo_129_微信图片_20260621180258_216_5448.jpg","photo_130_微信图片_20260621180302_217_5448.jpg","photo_131_微信图片_20260621180306_218_5448.jpg","photo_132_微信图片_20260621180311_219_5448.jpg","photo_133_微信图片_20260621180315_220_5448.jpg","photo_134_微信图片_20260621180318_221_5448.jpg","photo_135_微信图片_20260621180321_222_5448.jpg","photo_136_微信图片_20260621180323_223_5448.jpg","photo_137_微信图片_20260621180329_224_5448.jpg","photo_138_微信图片_20260621180334_225_5448.jpg","photo_139_微信图片_20260621180339_226_5448.jpg","photo_140_微信图片_20260621180344_227_5448.jpg","photo_141_微信图片_20260621180347_228_5448.jpg","photo_142_微信图片_20260621180349_229_5448.jpg","photo_143_微信图片_20260621180351_230_5448.jpg","photo_144_微信图片_20260621180356_231_5448.jpg","photo_145_微信图片_20260621180401_232_5448.jpg","photo_146_微信图片_20260621180406_233_5448.jpg","photo_147_微信图片_20260621180408_234_5448.jpg","photo_148_微信图片_20260621180411_235_5448.jpg","photo_149_微信图片_20260621180413_236_5448.jpg","photo_150_微信图片_20260621180417_237_5448.jpg","photo_151_微信图片_20260621180421_238_5448.jpg","photo_152_微信图片_20260621180423_239_5448.jpg","photo_153_微信图片_20260621180425_240_5448.jpg","photo_154_微信图片_20260621180429_241_5448.jpg","photo_155_微信图片_20260621180431_242_5448.jpg","photo_156_微信图片_20260621180433_243_5448.jpg","photo_157_微信图片_20260621180438_244_5448.jpg","photo_158_微信图片_20260621180443_245_5448.jpg","photo_159_微信图片_20260621180448_246_5448.jpg","photo_160_微信图片_20260621180452_247_5448.jpg","photo_161_微信图片_20260621180455_248_5448.jpg","photo_162_微信图片_20260621180459_249_5448.jpg","photo_163_微信图片_20260621180503_250_5448.jpg","photo_164_微信图片_20260621180507_251_5448.jpg","photo_165_微信图片_20260621180509_252_5448.jpg","photo_166_微信图片_20260621180514_253_5448.jpg","photo_167_微信图片_20260621180519_254_5448.jpg","photo_168_微信图片_20260621180524_255_5448.jpg","photo_169_微信图片_20260621180526_256_5448.jpg"];
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  document.getElementById('lightbox-img').src = photos[index];
+  document.getElementById('lightbox-count').textContent = (index + 1) + ' / ' + photos.length;
+  document.getElementById('lightbox').classList.add('show');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('show');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft' && currentIndex > 0) openLightbox(currentIndex - 1);
+  if (e.key === 'ArrowRight' && currentIndex < photos.length - 1) openLightbox(currentIndex + 1);
+});
+</script>
+
+</body>
+</html>
